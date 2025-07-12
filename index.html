@@ -1,0 +1,59 @@
+<!-- src/main/resources/templates/index.ftlh -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Employee Directory</h1>
+    <div class="controls">
+      <input type="text" id="search-input" placeholder="Search by name or email" />
+      <button id="filter-toggle">Filter</button>
+      <select id="sort-select">
+        <option value="">Sort By</option>
+        <option value="firstName">First Name</option>
+        <option value="department">Department</option>
+      </select>
+      <select id="show-count">
+        <option value="10">Show: 10</option>
+        <option value="25">Show: 25</option>
+        <option value="50">Show: 50</option>
+      </select>
+      <button id="add-employee-btn">Add Employee</button>
+    </div>
+
+    <div id="filter-panel" class="hidden">
+      <input type="text" id="filter-firstName" placeholder="First Name" />
+      <input type="text" id="filter-department" placeholder="Department" />
+      <input type="text" id="filter-role" placeholder="Role" />
+      <button id="apply-filters">Apply Filter</button>
+    </div>
+
+    <div id="employee-list-container"></div>
+
+    <!-- Form -->
+    <div id="form-container" class="hidden">
+      <h2 id="form-title">Add Employee</h2>
+      <form id="employee-form">
+        <input type="hidden" id="employee-id" />
+        <input type="text" id="firstName" placeholder="First Name" required />
+        <input type="text" id="lastName" placeholder="Last Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="text" id="department" placeholder="Department" required />
+        <input type="text" id="role" placeholder="Role" required />
+        <div class="form-actions">
+          <button type="submit">Save</button>
+          <button type="button" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/static/js/data.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
